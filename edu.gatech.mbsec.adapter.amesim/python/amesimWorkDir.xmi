@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lms.amesim:WorkingDirectory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:lms.amesim="http://www.lmsintl.com/LMS-Imagine-Lab-AMESim/">
+	<circuit name="test.comsvnamesimrepository---FlatTwin">
+		<globalParameter uniqueName="R" unit="mm" title="radius of crank"/>
+		<globalParameter uniqueName="MASS" value="100" unit="kg" title="mass"/>
+		<globalParameter uniqueName="L" unit="mm" title="length of connecting rod"/>
+		<component name="mass_friction1port" subModelName="MAS003" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="mass@mass_friction1port" value="MASS" unit="kg" title="mass"/>
+			<parameter dataPath="coefv@mass_friction1port" value="5" unit="N/(m/s)" title="coefficient of viscous friction"/>
+			<parameter dataPath="wind@mass_friction1port" value="0" unit="N/(m/s)**2" title="coefficient of windage"/>
+			<parameter dataPath="coul@mass_friction1port" value="0" unit="N" title="Coulomb friction force"/>
+			<parameter dataPath="stict@mass_friction1port" value="0" unit="N" title="stiction force"/>
+			<parameter dataPath="angle@mass_friction1port" value="0" unit="degree" title="inclination (+90 port 1 lowest, -90 port 1 highest)"/>
+			<port id="FlatTwin/mass_friction1port/1" type="lshaft"/>
+		</component>
+		<component name="springdamper01" subModelName="SD0000A" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="force0@springdamper01" value="0" unit="N" title="spring force with both displacements zero"/>
+			<parameter dataPath="srate@springdamper01" value="100000" unit="N/m" title="spring rate"/>
+			<parameter dataPath="cdamp@springdamper01" value="4000" unit="N/(m/s)" title="damper rating"/>
+			<parameter dataPath="G@springdamper01" value="8.57e+10" unit="N/m**2" title="material shear modulus"/>
+			<parameter dataPath="sdiam@springdamper01" value="20" unit="mm" title="spring diameter"/>
+			<parameter dataPath="wdiam@springdamper01" value="2" unit="mm" title="wire diameter"/>
+			<parameter dataPath="stiffmode@springdamper01" value="1" unit="None" title="spring stiffness mode"/>
+			<parameter dataPath="ncoils@springdamper01" value="10" unit="None" title="number of active coils"/>
+			<port id="FlatTwin/springdamper01/1" type="lshaft"/>
+			<port id="FlatTwin/springdamper01/2" type="lshaft"/>
+		</component>
+		<component name="simple_crank" subModelName="CRANK0" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="rad@simple_crank" value="R" unit="mm" title="radius of crank"/>
+			<parameter dataPath="length@simple_crank" value="13" unit="mm" title="length of connecting rod"/>
+			<parameter dataPath="offset@simple_crank" value="0" unit="mm" title="offset for displacement"/>
+			<port id="FlatTwin/simple_crank/1" type="rshaft"/>
+			<port id="FlatTwin/simple_crank/2" type="lshaft"/>
+		</component>
+		<component name="rconnector" subModelName="RCON00" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<port id="FlatTwin/rconnector/1" type="rshaft"/>
+			<port id="FlatTwin/rconnector/2" type="rshaft"/>
+			<port id="FlatTwin/rconnector/3" type="rshaft"/>
+		</component>
+		<component name="simple_crank_2" subModelName="CRANK0" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="rad@simple_crank_2" value="R" unit="mm" title="radius of crank"/>
+			<parameter dataPath="length@simple_crank_2" value="L" unit="mm" title="length of connecting rod"/>
+			<parameter dataPath="offset@simple_crank_2" value="0" unit="mm" title="offset for displacement"/>
+			<port id="FlatTwin/simple_crank_2/1" type="rshaft"/>
+			<port id="FlatTwin/simple_crank_2/2" type="lshaft"/>
+		</component>
+		<component name="springdamper01_2" subModelName="SD0000A" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="force0@springdamper01_2" value="0" unit="N" title="spring force with both displacements zero"/>
+			<parameter dataPath="srate@springdamper01_2" value="100000" unit="N/m" title="spring rate"/>
+			<parameter dataPath="cdamp@springdamper01_2" value="1000" unit="N/(m/s)" title="damper rating"/>
+			<parameter dataPath="G@springdamper01_2" value="8.57e+10" unit="N/m**2" title="material shear modulus"/>
+			<parameter dataPath="sdiam@springdamper01_2" value="20" unit="mm" title="spring diameter"/>
+			<parameter dataPath="wdiam@springdamper01_2" value="2" unit="mm" title="wire diameter"/>
+			<parameter dataPath="stiffmode@springdamper01_2" value="1" unit="None" title="spring stiffness mode"/>
+			<parameter dataPath="ncoils@springdamper01_2" value="10" unit="None" title="number of active coils"/>
+			<port id="FlatTwin/springdamper01_2/1" type="lshaft"/>
+			<port id="FlatTwin/springdamper01_2/2" type="lshaft"/>
+		</component>
+		<component name="rload01" subModelName="RL00" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="J@rload01" value="10" unit="kgm**2" title="moment of inertia"/>
+			<parameter dataPath="vis@rload01" value="1" unit="Nm/(rev/min)" title="coefficient of viscous friction"/>
+			<parameter dataPath="coul@rload01" value="0" unit="Nm" title="Coulomb friction torque"/>
+			<parameter dataPath="stict@rload01" value="0" unit="Nm" title="stiction torque"/>
+			<port id="FlatTwin/rload01/1" type="rshaft"/>
+		</component>
+		<component name="mass_friction1port_2" subModelName="MAS003" subModelInstanceNumber="-1" subModelDirectory="$AME/libmec/submodels" categoryName="meca">
+			<parameter dataPath="mass@mass_friction1port_2" value="MASS" unit="kg" title="mass"/>
+			<parameter dataPath="coefv@mass_friction1port_2" value="0" unit="N/(m/s)" title="coefficient of viscous friction"/>
+			<parameter dataPath="wind@mass_friction1port_2" value="0" unit="N/(m/s)**2" title="coefficient of windage"/>
+			<parameter dataPath="coul@mass_friction1port_2" value="0" unit="N" title="Coulomb friction force"/>
+			<parameter dataPath="stict@mass_friction1port_2" value="0" unit="N" title="stiction force"/>
+			<parameter dataPath="angle@mass_friction1port_2" value="0" unit="degree" title="inclination (+90 port 1 lowest, -90 port 1 highest)"/>
+			<port id="FlatTwin/mass_friction1port_2/1" type="lshaft"/>
+		</component>
+	</circuit>
+</lms.amesim:WorkingDirectory>

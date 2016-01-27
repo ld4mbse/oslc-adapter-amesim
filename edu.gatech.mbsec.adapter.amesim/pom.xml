@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.gatech.mbsec.adapter.amesim3</groupId>
+  <artifactId>oslc4jamesim</artifactId>
+  <version>1.1.0</version>
+  <packaging>war</packaging>
+  
+  <name>oslc4jamesim</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<scope>provided</scope>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+			<version>3.1-b06</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.gatech.mbsec.adapter.amesim.ecore</groupId>
+			<artifactId>ecore-amesim</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-wink</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-jena-provider</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-core</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.eclipse.lyo.oslc4j.core</groupId>
+			<artifactId>oslc4j-json4j-provider</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>3.4</version>
+		</dependency>
+
+		<!-- ********************************************************************** -->
+		<!-- Subversion client module -->
+		<dependency>
+			<groupId>edu.gatech.mbsec.subversion.client</groupId>
+			<artifactId>svnkit-client</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<!-- Subversion OSLC web services module --> 
+		<dependency>
+			<groupId>edu.gatech.mbsec.adapter.subversion</groupId>
+			<artifactId>oslc4jsubversion</artifactId>			
+			<version>1.1.0</version>
+		</dependency>
+
+
+
+
+	</dependencies>
+  
+  
+  
+  <build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			
+			
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+					<warSourceDirectory>WebContent</warSourceDirectory> <failOnMissingWebXml>false</failOnMissingWebXml>  
+				</configuration>
+			</plugin>
+			
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<server>tomcat7</server>
+					<port>8282</port>
+					<url>http://localhost:8080/manager/text</url>
+					<path>/oslc4jamesim</path>
+					<webResources>
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>python</directory>
+						</resource>
+					</webResources>
+					<portNames>
+						<portName>maven.tomcat.port</portName>
+					</portNames>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+	</build>
+  
+  
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="edu.gatech.mbsec.adapter.amesim">
+        <wb-resource deploy-path="/WEB-INF/web.xml" source-path="/src/main/webapp/WEB-INF/web.xml"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <dependent-module archiveName="ecore-amesim-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.adapter.amesim.ecore/edu.gatech.mbsec.adapter.amesim.ecore">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="svnkit-client-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.subversion.client/edu.gatech.mbsec.subversion.client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oslc4jsubversion-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.adapter.subversion/edu.gatech.mbsec.adapter.subversion">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oslc-query-3.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.lyo.core.query/org.eclipse.lyo.core.query">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/edu.gatech.mbsec.adapter.amesim/target/classes"/>
+        <property name="context-root" value="edu.gatech.mbsec.adapter.amesim"/>
+    </wb-module>
+</project-modules>
