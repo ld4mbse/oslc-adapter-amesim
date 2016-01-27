@@ -29,7 +29,7 @@ f.write('<lms.amesim:WorkingDirectory xmi:version="2.0" xmlns:xmi="http://www.om
 	
 # find all files in current directory
 # amesimDirectory = sys.argv[1]
-amesimDirectory = "../AMESim"
+amesimDirectory = "../amesimmodels"
 # for files in os.listdir("."):
 for path, subdirs, files in os.walk(amesimDirectory):
 	for file in files:
