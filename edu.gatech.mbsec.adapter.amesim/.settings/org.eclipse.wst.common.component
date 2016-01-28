@@ -4,8 +4,8 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <dependent-module archiveName="ecore-amesim-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/edu.gatech.mbsec.adapter.amesim.ecore/edu.gatech.mbsec.adapter.amesim.ecore">
             <dependency-type>uses</dependency-type>
         </dependent-module>
@@ -19,6 +19,6 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/edu.gatech.mbsec.adapter.amesim/target/classes"/>
-        <property name="context-root" value="edu.gatech.mbsec.adapter.amesim"/>
+        <property name="context-root" value="oslc4jamesim"/>
     </wb-module>
 </project-modules>
