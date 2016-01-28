@@ -289,7 +289,7 @@ public class OSLC4JAMESimApplication extends OslcWinkApplication {
 		Thread thread = new Thread() {
 			public void start() {
 				ArrayList<FileMetadata> fileMetaDatas = clients.SubversionClient.syncWorkingCopy(svnurl,
-						amesimModelsDirectory);
+						amesimModelsDirectory, svnUserName, svnPassword);
 				// convert fileMetaDatas into OSLC POJOs
 				subversionManager.convertFileMetaDataIntoRDFSubversionFileResources(fileMetaDatas);
 			}
