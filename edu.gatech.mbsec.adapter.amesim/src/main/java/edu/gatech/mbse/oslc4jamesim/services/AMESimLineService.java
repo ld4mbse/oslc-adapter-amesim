@@ -42,8 +42,8 @@ import org.eclipse.lyo.oslc4j.core.model.OslcMediaType;
 
 import edu.gatech.mbse.oslc4jamesim.application.AMESimManager;
 import edu.gatech.mbse.oslc4jamesim.application.OSLC4JAMESimApplication;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimLine;
-import edu.gatech.mbse.oslc4jamesim.resources.Constants;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimLine;
+import edu.gatech.mbsec.adapter.amesim.resources.Constants;
 
 @OslcService(Constants.AMESIM_LINE_DOMAIN)
 @Path("{modelName}/lines")

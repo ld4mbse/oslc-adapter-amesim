@@ -5,10 +5,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimComponent;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimElementsToCreate;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimLine;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimParameter;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimElementsToCreate;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimLine;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimParameter;
 
 public class Service2PythonThread extends Thread{
 	AMESimElementsToCreate newElements;

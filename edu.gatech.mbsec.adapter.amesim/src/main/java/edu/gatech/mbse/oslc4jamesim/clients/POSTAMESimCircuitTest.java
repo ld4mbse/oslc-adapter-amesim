@@ -25,10 +25,10 @@ import org.eclipse.lyo.oslc4j.provider.jena.JenaProvidersRegistry;
 
 
 
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimComponent;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimElementsToCreate;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimLine;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimParameter;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimElementsToCreate;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimLine;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimParameter;
 import edu.gatech.mbse.oslc.wink.clients.OslcRestClient;
 
 public class POSTAMESimCircuitTest {

@@ -36,9 +36,9 @@ import org.eclipse.lyo.oslc4j.core.model.ServiceProviderCatalog;
 //import com.sun.jersey.api.view.Viewable;
 
 import edu.gatech.mbse.oslc4jamesim.application.AMESimManager;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimCircuit;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimElementsToCreate;
-import edu.gatech.mbse.oslc4jamesim.resources.Constants;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimCircuit;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimElementsToCreate;
+import edu.gatech.mbsec.adapter.amesim.resources.Constants;
 import edu.gatech.mbse.oslc4jamesim.serviceproviders.ServiceProviderCatalogSingleton;
 
 

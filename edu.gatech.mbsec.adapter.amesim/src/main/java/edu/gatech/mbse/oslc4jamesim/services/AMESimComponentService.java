@@ -34,9 +34,9 @@ import org.eclipse.lyo.oslc4j.core.model.OslcMediaType;
 //import com.sun.jersey.api.view.Viewable;
 
 import edu.gatech.mbse.oslc4jamesim.application.AMESimManager;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimCircuit;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimComponent;
-import edu.gatech.mbse.oslc4jamesim.resources.Constants;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimCircuit;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent;
+import edu.gatech.mbsec.adapter.amesim.resources.Constants;
 
 
 

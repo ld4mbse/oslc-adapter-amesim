@@ -4,7 +4,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.ServiceProviderCatalog" %>
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.ServiceProvider" %>
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link" %>
-<%@ page import="edu.gatech.mbse.oslc4jamesim.resources.AMESimComponent" %>
+<%@ page import="edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent" %>
 <%
 String bugzillaUri = (String) request.getAttribute("bugzillaUri");
 AMESimComponent block = (AMESimComponent)request.getAttribute("component");

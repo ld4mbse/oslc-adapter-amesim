@@ -42,8 +42,8 @@ import org.eclipse.lyo.oslc4j.core.model.OslcMediaType;
 
 import edu.gatech.mbse.oslc4jamesim.application.AMESimManager;
 import edu.gatech.mbse.oslc4jamesim.application.OSLC4JAMESimApplication;
-import edu.gatech.mbse.oslc4jamesim.resources.AMESimPort;
-import edu.gatech.mbse.oslc4jamesim.resources.Constants;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimPort;
+import edu.gatech.mbsec.adapter.amesim.resources.Constants;
 
 @OslcService(Constants.AMESIM_PORT_DOMAIN)
 @Path("{modelName}/ports")
