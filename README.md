@@ -72,6 +72,18 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 4. Select the project, right-click -> Properties. Select Java Compiler and select 1.8 in the drop down menu next to the JDK compliance setting as highlighted below.
 
 
+### 7. Checking active Python interpreter
+Make sure that you have already installed AMESim. A Python interpreter is typically installed together with AMESim. You can check if you have already installed Python on your Windows machine by typing ”python -V” in the command prompt window. Launch the command prompt by clicking on Start->All Programs-> Accessories-> Command Prompt. You may have multiple Python interpreters installed on your computer. You can check your active Python interpreter on your Windows machine by typing ”which python” in the command prompt window. It should refer to the Python interpreter provided by AMESim. 
+ 
+Note: if your active Python interpreter is different than the one provided by AMEsim:
+
+- run the python.bat file located in your AMESim installation folder
+- set the PATH environment variable such that it first refers to the python distribution of AMESim before any other Pyhton distribution
+- set the PYTHON_HOME environment variable to point to the python distribution of AMESim
+
+
+
+
 ### 7.	Manual configuration 
 
 Specify the port number of the OSLC AMESim adapter service of in the config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. By default, port 8282 will be used. As an example displayed below, the port number is set to 8282.
