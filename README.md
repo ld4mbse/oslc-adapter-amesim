@@ -7,12 +7,12 @@
 | AMESim Concept  	| GET	| POST	| PUT	| 	DELETE	|
 | ------------- 	| ------|-------|----	|------		|
 | Component  		| X  	| X 	|  	| 		|
-| Circuit  		| X 	| 	| 	| 		|
-| Line  		| X 	| X	| 	| 		|
+| Circuit  		| X 	| X	| 	| 		|
+| Line  		| X 	| X	| X	| 		|
 | Port  		| X 	| X	| 	| 		|
 | Parameter  		| X 	| X	| X	| 		|
-| Global Parameter  		| X 	| X	| X	| 		|
-| Variable  		| X 	| X	| X	| 		|
+| Global Parameter  	| X 	| X	| X	| 		|
+
 
 
 
