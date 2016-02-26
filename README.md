@@ -72,18 +72,6 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 4. Select the project, right-click -> Properties. Select Java Compiler and select 1.8 in the drop down menu next to the JDK compliance setting as highlighted below.
 
 
-### 7. Checking active Python interpreter
-Make sure that you have already installed AMESim. A Python interpreter is typically installed together with AMESim. You can check if you have already installed Python on your Windows machine by typing ”python -V” in the command prompt window. Launch the command prompt by clicking on Start->All Programs-> Accessories-> Command Prompt. You may have multiple Python interpreters installed on your computer. You can check your active Python interpreter on your Windows machine by typing ”which python” in the command prompt window. It should refer to the Python interpreter provided by AMESim. 
- 
-Note: if your active Python interpreter is different than the one provided by AMEsim:
-
-- run the python.bat file located in your AMESim installation folder
-- set the PATH environment variable such that it first refers to the python distribution of AMESim before any other Pyhton distribution
-- set the PYTHON_HOME environment variable to point to the python distribution of AMESim
-
-
-
-
 ### 7.	Manual configuration 
 
 Specify the port number of the OSLC AMESim adapter service of in the config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. By default, port 8282 will be used. As an example displayed below, the port number is set to 8282.
@@ -104,9 +92,13 @@ Specify the port number of the OSLC AMESim adapter service of in the config.prop
 #### a. Retrieval of AMESim models from a local directory - "local mode"
 
 Specify the location of the folder containing AMESim models which will be considered by the OSLC AMESim adapter in the config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. As an example displayed below, the location of the folder containing AMESim models for the OSLC adapter is specified to
-```text
-C:/Users/…/git/oslc4jamesim/edu.gatech.mbsec.adapter.amesim/AMESim Models/
+ ```text
+C:/Users/…/git/oslc-adapter-amesim/edu.gatech.mbsec.adapter.amesim/amesimmodels/
 ```
+
+**Warning**: the location of the folder containing AMESim models needs to refer to the **amesimmodels** folder contained in the edu.gatech.mbsec.adapter.amesim project as in the example above. This lack of flexibility is temporary. It is important that the folder be named AMESim and be located directly under the project. 
+
+
 Several example AMESim models are located in the amesimmodels folder in the edu.gatech.mbsec.adapter.amesim project. 
 
 Note: The file path can contain backslashes. 
@@ -140,8 +132,8 @@ C:/Users/…/git/oslc4jamesim/edu.gatech.mbsec.adapter.amesim/localworkingdirs
 1. Set the value of useIndividualSubversionFiles to true
 2.	Specify the Subversion file URLs representing AMESim models which will be published by the adapter at startup in the subversionfiles.csv file under edu.gatech.mbsec.adapter.amesim/configuration. As an example displayed below, the Subversion file URLs  are specified to be
  ```text
-https://koneksys1:18080/svn/repository1/model11.slx
-https://koneksys1:18080/svn/repository1/model4.slx
+https://koneksys1:18080/svn/repository1/FlatTwin.ame
+https://koneksys1:18080/svn/repository1/FlatTwin3.ame
 ``` 
 3.	During adapter runtime, you can change the Subversion files to be published through the web app at [http://localhost:8080/oslc4jamesim/services/svnfilepublisher](http://localhost:8080/oslc4jamesim/services/svnfilepublisher)
 Note: the port number may differ from 8080 if specified differently in thr config.properties file
@@ -155,19 +147,14 @@ Note: The contents of this folder will be deleted when the adapter starts in ind
 Warning: Do not choose as local Subversion file storage the same folder as the one containing all sample AMESim models, nor the one containing the local AMESim models models without Subversion info.  
  
 
-### 8.	Setting up the Matlab workspace
-1.	Launch Matlab 
-2.	From the File menu, select Set Path…(if your Matlab version has a ribbon-based user interface such as inR2013, choose Set Path in the Home ribbon in the Environment section)
-3.	Use the **Add Folder…** command to add the matlab folder of the oslc4jamesim project to the Matlab search path based on the location of your local git repository
-4. Use the **Add with Subfolders…** command to add the folder in the oslc4jamesim project containing AMESim models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path in “local mode”  
- ```text
-C:/Users/…/git/oslc4jamesim/edu.gatech.mbsec.adapter.amesim/AMESim Models/
-```
-  and in “SVN repository mode” and “Individual SVN files mode”:
-  ```text
-  C:/Users/…/git/oslc4jamesim/edu.gatech.mbsec.adapter.amesim/localworkingdirs
- ```
-5.	Click Save and then Close
+### 8. Checking active Python interpreter
+Make sure that you have already installed AMESim. A Python interpreter is typically installed together with AMESim. You can check if you have already installed Python on your Windows machine by typing ”python -V” in the command prompt window. Launch the command prompt by clicking on Start->All Programs-> Accessories-> Command Prompt. You may have multiple Python interpreters installed on your computer. You can check your active Python interpreter on your Windows machine by typing ”which python” in the command prompt window. It should refer to the Python interpreter provided by AMESim. 
+ 
+Note: if your active Python interpreter is different than the one provided by AMEsim:
+
+- run the python.bat file located in your AMESim installation folder
+- set the PATH environment variable such that it first refers to the python distribution of AMESim before any other Pyhton distribution
+- set the PYTHON_HOME environment variable to point to the python distribution of AMESim
  
 
 ### 9. Installing Apache Tomcat
@@ -282,7 +269,7 @@ There are several options
 
 
 #### Option #1: Deploying OSLC AMESim adapter on Tomcat server embedded in Eclipse launched through Maven
-Select the oslc4jamesim launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for amesim** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
+Select the oslc4jamesim launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc4jamesim-wink tomcat run** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
 
 Warning: If the OSLC AMESim adapter service fails to launch due to a java.net.BindException, a different port for the OSLC AMESim adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC AMESim adapter uses port 8282. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
 
@@ -306,7 +293,7 @@ Note: If you launch the Maven launch configuration (OSLC AMESim adapter) in debu
 	4. In the Deploy section, select the WAR file to upload using the dialog shown below.
 
 #### Option #3: Deploying OSLC AMESim adapter on standalone Tomcat server automatically from Eclipse
-Run the Maven launch configuration named **oslc adapter for amesim tomcat deploy**
+Run the Maven launch configuration named **oslc4jamesim wink - tomcat deploy**
 
 #### Option #4: Deploying OSLC AMESim adapter on standalone Tomcat server automatically from Eclipse in debug mode
 
@@ -321,7 +308,7 @@ setlocal
 4. Launch Tomcat by running the following command: **catalina jpda start**
 5. Set breakpoints in your code if necessary
 6. First launch the remote java application named **remote debugger oslc4jamesim on tomcat** by choosing in Eclipse Debug-> Debug Configurations… , and then run the remote java application
-7. And then run the Maven launch configuration named **oslc4jamesim tomcat deploy debug**
+7. And then run the Maven launch configuration named **oslc4jamesim wink - tomcat deploy**
 
 
 ### 12.	Testing the OSLC AMESim Adapter
@@ -329,20 +316,20 @@ setlocal
 #### Testing the retrieval of OSLC resources in HTML
 
 1. Launch your web browser Google Chrome
-2. In the URL field, type for test purposes: [http://localhost:8282/oslc4jamesim/services/catalog/singleton](http://localhost:8282/oslc4jamesim/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the AMESim Service Provider Catalog. This will launch a Matlab command window which will close automatically. The Matlab command window may display warnings if it is an older version than R2013b.
-3. You will then see an HTML page showing you the list of Service Providers. You can browse from the Service Providers (e.g. for model11) to the Services and ultimately to the OSLC AMESim resources.
+2. In the URL field, type for test purposes: [http://localhost:8282/oslc4jamesim/services/catalog/singleton](http://localhost:8282/oslc4jamesim/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the AMESim Service Provider Catalog. This will launch a Python script.
+3. You will then see an HTML page showing you the list of Service Providers. You can browse from the Service Providers (e.g. for FlatTwin) to the Services and ultimately to the OSLC AMESim resources.
 
 
 #### Testing the retrieval of OSLC resources in RDF
 
 1. Click on the Postman icon at the top right of the Chrome browser . A new tab will open. 
-2. In the URL field, type for test purposes the URI of a resource published by the AMESim adapter (Example: http://localhost:8282/oslc4jamesim/services/model1/components/Constant). 
+2. In the URL field, type for test purposes the URI of a resource published by the AMESim adapter (Example: http://localhost:8282/oslc4jamesim/services/FlatTwin/components/Constant). 
 3. Click on the Headers field to the right of the URL field
 4. Enter Accept in the Header field and application/rdf+xml in the value field as shown below
 5. Click Send
 6. This will send a HTTP GET request to retrieve the RDF/XML representation of the AMESim block.
 
-The edu.gatech.mbsec.adapter.amesim project contains example AMESim models containing different types of AMESim elements. The example models are located in the folder [amesimmodels](/org.eclipse.lyo.adapter.amesim/amesimmodels). Model [model11](org.eclipse.lyo.adapter.amesim/amesimmodels/model11.slx) contains blocks, subsystems, model reference blocks, ports, lines, and lines with multiple target ports 
+The edu.gatech.mbsec.adapter.amesim project contains example AMESim models containing different types of AMESim elements. The example models are located in the folder [amesimmodels](/org.eclipse.lyo.adapter.amesim/amesimmodels) such as  [FlatTwin](org.eclipse.lyo.adapter.amesim/amesimmodels/FlatTwin.ame) 
  
 #### Testing the retrieval of Subversion File Metadata resources in HTML and RDF (only available in "SVN Repository mode" and "Individual SVN files mode")
 URL: http://localhost:8282/oslc4jamesim/services/subversionfiles/
