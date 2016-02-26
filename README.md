@@ -18,9 +18,9 @@
 
 
 
-##Instructions to install and run OSLC AMESim Adapter (for Matlab R2013b, 2014a, 2014b, 2015)
+##Instructions to install and run OSLC AMESim Adapter (for AMESim v13, and v14)
 
-Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 16, 2016
+Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 26, 2016
 ### 1.	Installing OSLC4J
 Follow the [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
 
@@ -74,7 +74,7 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 
 ### 7.	Manual configuration 
 
-Specify the port number of the OSLC AMESim adapter service of in the config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. By default, port 8181 will be used. As an example displayed below, the port number is set to 8181.
+Specify the port number of the OSLC AMESim adapter service of in the config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. By default, port 8282 will be used. As an example displayed below, the port number is set to 8282.
 
 *Optional - only useful if you want to re-generate the OSLC4J-annotated Java classes*
 *Specify the location of AMESim Ecore file in the config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. The location of the AMESim ecore file named amesim.ecore is in the edu.gatech.mbsec.adapter.amesim.ecore project under /model/amesim.ecore. As an example displayed below, the location of the amesim.ecore file is specified to
@@ -199,7 +199,7 @@ Note: If you get the warning shown below while trying to save the file, then cop
 
 #### Setting the Apache Tomcat server port 
 
-1.	By default, the OSLC AMESim adapter service will run on port 8181. Change the port of the oslc4jamesim service only if you need to avoid a conflict with another service already running on port 8181. Skip the next steps if you do not need to change the port. 
+1.	By default, the OSLC AMESim adapter service will run on port 8282. Change the port of the oslc4jamesim service only if you need to avoid a conflict with another service already running on port 8282. Skip the next steps if you do not need to change the port. 
 2.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 3.	Expand the edu.gatech.mbsec.adapter.amesim project
 4.	Select and open the maven pom.xml file through double-click
@@ -272,7 +272,7 @@ There are several options
 #### Option #1: Deploying OSLC AMESim adapter on Tomcat server embedded in Eclipse launched through Maven
 Select the oslc4jamesim launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for amesim** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
 
-Warning: If the OSLC AMESim adapter service fails to launch due to a java.net.BindException, a different port for the OSLC AMESim adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC AMESim adapter uses port 8181. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
+Warning: If the OSLC AMESim adapter service fails to launch due to a java.net.BindException, a different port for the OSLC AMESim adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC AMESim adapter uses port 8282. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
 
 Note: In order to stop a running oslc4jamesim web application, click Terminate in the Console window, or in the toolbar of the debug perspective.
 
@@ -317,14 +317,14 @@ setlocal
 #### Testing the retrieval of OSLC resources in HTML
 
 1. Launch your web browser Google Chrome
-2. In the URL field, type for test purposes: [http://localhost:8181/oslc4jamesim/services/catalog/singleton](http://localhost:8181/oslc4jamesim/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the AMESim Service Provider Catalog. This will launch a Matlab command window which will close automatically. The Matlab command window may display warnings if it is an older version than R2013b.
+2. In the URL field, type for test purposes: [http://localhost:8282/oslc4jamesim/services/catalog/singleton](http://localhost:8282/oslc4jamesim/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the AMESim Service Provider Catalog. This will launch a Matlab command window which will close automatically. The Matlab command window may display warnings if it is an older version than R2013b.
 3. You will then see an HTML page showing you the list of Service Providers. You can browse from the Service Providers (e.g. for model11) to the Services and ultimately to the OSLC AMESim resources.
 
 
 #### Testing the retrieval of OSLC resources in RDF
 
 1. Click on the Postman icon at the top right of the Chrome browser . A new tab will open. 
-2. In the URL field, type for test purposes the URI of a resource published by the AMESim adapter (Example: http://localhost:8181/oslc4jamesim/services/model1/blocks/Constant). 
+2. In the URL field, type for test purposes the URI of a resource published by the AMESim adapter (Example: http://localhost:8282/oslc4jamesim/services/model1/components/Constant). 
 3. Click on the Headers field to the right of the URL field
 4. Enter Accept in the Header field and application/rdf+xml in the value field as shown below
 5. Click Send
@@ -333,14 +333,14 @@ setlocal
 The edu.gatech.mbsec.adapter.amesim project contains example AMESim models containing different types of AMESim elements. The example models are located in the folder [amesimmodels](/org.eclipse.lyo.adapter.amesim/amesimmodels). Model [model11](org.eclipse.lyo.adapter.amesim/amesimmodels/model11.slx) contains blocks, subsystems, model reference blocks, ports, lines, and lines with multiple target ports 
  
 #### Testing the retrieval of Subversion File Metadata resources in HTML and RDF (only available in "SVN Repository mode" and "Individual SVN files mode")
-URL: http://localhost:8181/oslc4jamesim/services/subversionfiles/
+URL: http://localhost:8282/oslc4jamesim/services/subversionfiles/
  
 #### Testing the selection of Subversion Files hosted by AMESim adapter in HTML and RDF (only available in "Individual SVN files mode")
-URL: http://localhost:8181/oslc4jamesim/services/svnfilepublisher
+URL: http://localhost:8282/oslc4jamesim/services/svnfilepublisher
 
 #### Testing the retrieval of AMESim Resource Shapes hosted by the AMESim adapter in HTML and RDF
-URL: http://localhost:8181/oslc4jamesim/services/resourceShapes
+URL: http://localhost:8282/oslc4jamesim/services/resourceShapes
 
 #### Testing the retrieval of AMESim RDF vocabulary hosted by the AMESim adapter in HTML and RDF
-URL: http://localhost:8181/oslc4jamesim/services/rdfvocabulary
+URL: http://localhost:8282/oslc4jamesim/services/rdfvocabulary
 
