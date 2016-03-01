@@ -154,7 +154,7 @@ Note: if your active Python interpreter is different than the one provided by AM
 
 - run the python.bat file located in your AMESim installation folder
 - set the PATH environment variable such that it first refers to the python distribution of AMESim before any other Pyhton distribution
-- set the PYTHON_HOME environment variable to point to the python distribution of AMESim
+- set the PYTHONHOME environment variable to point to the python distribution of AMESim
  
 
 ### 9. Installing Apache Tomcat
