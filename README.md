@@ -96,7 +96,7 @@ Specify the location of the folder containing AMESim models which will be consid
 C:/Users/…/git/oslc-adapter-amesim/edu.gatech.mbsec.adapter.amesim/amesimmodels/
 ```
 
-**Warning**: the location of the folder containing AMESim models needs to refer to the **amesimmodels** folder contained in the edu.gatech.mbsec.adapter.amesim project as in the example above. This lack of flexibility is temporary. It is important that the folder be named AMESim and be located directly under the project. 
+**Warning**: the location of the folder containing AMESim models needs to refer to the **amesimmodels** folder contained in the edu.gatech.mbsec.adapter.amesim project as in the example above. This lack of flexibility is temporary. It is important that the folder be named **amesimmodels** and be located directly under the project. 
 
 
 Several example AMESim models are located in the amesimmodels folder in the edu.gatech.mbsec.adapter.amesim project. 
@@ -124,8 +124,10 @@ delayInSecondsBetweenDataRefresh = 90
  4. Specify your Subversion credentials through the svnUserName and svnPassword fields
  5. Specify the location of the folder containing AMESim models where the Subversion files will be saved locally in config.properties file under edu.gatech.mbsec.adapter.amesim/configuration. As an example displayed below, the location of the folder containing AMESim models for the OSLC adapter is specified to 
  ```text
-C:/Users/…/git/oslc4jamesim/edu.gatech.mbsec.adapter.amesim/localworkingdirs
+C:/Users/…/git/oslc-adapter-amesim/edu.gatech.mbsec.adapter.amesim/amesimmodels/
 ```
+
+**Warning**: the location of the folder containing AMESim models needs to refer to the **amesimmodels** folder contained in the edu.gatech.mbsec.adapter.amesim project as in the example above. This lack of flexibility is temporary. It is important that the folder be named **amesimmodels** and be located directly under the project.
 
 #### c.	Retrieval of AMESim models from individual Subversion-hosted files - “Individual SVN files mode”
 
